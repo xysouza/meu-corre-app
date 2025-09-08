@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet, KeyboardAvoidingView, ScrollView, Platform, } from 'react-native';
 import { COLORS, CATEGORY_ICONS, INCOME_CATEGORIES, EXPENSE_CATEGORIES } from '../constants'; 
 
 export default function AddLancamentoScreen({ navigation }) {
@@ -109,11 +109,12 @@ export default function AddLancamentoScreen({ navigation }) {
             </TouchableOpacity>
           ))}
         </View>
-      </ScrollView>
-
-      <TouchableOpacity style={styles.saveButton} onPress={handleAdicionar}>
+        <TouchableOpacity style={styles.saveButton} onPress={handleAdicionar}>
         <Text style={styles.saveButtonText}>Salvar Lançamento</Text>
       </TouchableOpacity>
+      </ScrollView>
+
+      
     </KeyboardAvoidingView>
   )
 }

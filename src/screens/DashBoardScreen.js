@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   // Estilo do Botão Flutuante, agora com ícone
   fab: {
     position: 'absolute',
-    bottom: 30,
+    bottom: 60,
     right: 30,
     width: 60,
     height: 60,
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   },
   clearButton: {
     position: 'absolute',
-    bottom: 100, // Posição um pouco acima do botão '+'
+    bottom: 140, // Posição um pouco acima do botão '+'
     right: 30,
     backgroundColor: 'red', // Deixei vermelho para ser um botão de "cuidado"
     paddingHorizontal: 20,
