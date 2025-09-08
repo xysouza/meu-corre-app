@@ -4,33 +4,9 @@ import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStaticNavigation, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import DashBoardScreen from './screens/DashBoardScreen';
-import AddLancamentoScreen from './screens/AddLancamentoScreen';
-
-/*
-function DashBoardScreen() {
-  const navigation = useNavigation();
-
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>DashBoard Screen</Text>
-      <Button title="Go to Add Lancamento" onPress={() => navigation.navigate('AddLancamento')}/>
-    </View>
-  );
-}
-
-function AddLancamentoScreen() {
-  const navigation = useNavigation();
-  
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Add Lancamento Screen</Text>
-      <Button title="Go to Add Lancamento... again" onPress={() => navigation.push('AddLancamento')}/>
-      <Button title="Go back" onPress={ () => navigation.goBack() } />
-    </View>
-  );
-} */
+import { COLORS } from './src/constants';
+import DashBoardScreen from './src/screens/DashBoardScreen';
+import AddLancamentoScreen from './src/screens/AddLancamentoScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,13 +14,18 @@ function RootStack() {
   return (
     <Stack.Navigator initialRouteName="DashBoard"
       screenOptions={{ 
-        headerStyle: { backgroundColor: 'tomato'},
+        headerStyle: { backgroundColor: COLORS.primary },
+        headerTintColor: COLORS.text,
+        headerTitleStyle: { fontWeight: 'bold' },
+        headerShadowVisible: false,
     }}
     >
       <Stack.Screen name="DashBoard" component={DashBoardScreen}
-      options={{ title: 'Meu Corre - Dashboard' }}
+      options={{ headerShown: false }}
       />
-      <Stack.Screen name="AddLancamento" component={AddLancamentoScreen} />
+      <Stack.Screen name="AddLancamento" component={AddLancamentoScreen} 
+      options={{ title: 'Novo Lançamento' }}
+      />
     </Stack.Navigator>
   );
 }
